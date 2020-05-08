@@ -5,7 +5,7 @@ export default class MyFrom extends Component {
 		super(props);
 		this.state = {
 			name: '山田たろう',
-			email: 'yamada@yamada.com'
+			email: 'yamada@yamada.com',
 		};
 		this.handleChange = this.handleChange.bind(this);
 		this.show = this.show.bind(this);
@@ -13,7 +13,7 @@ export default class MyFrom extends Component {
 
 	handleChange(event) {
 		this.setState({
-			[event.target.name]: event.target.value
+			[event.target.name]: event.target.value,
 		});
 		// event.preventDefault();
 	}
@@ -24,19 +24,30 @@ export default class MyFrom extends Component {
 	}
 
 	render() {
-		return(
+		return (
 			<form>
 				<div>
 					<label>名前：</label>
-					<input id="name" type="text" type="text" onChange={this.handleChange} defaultValue={this.state.name} />
+					<input
+						id="name"
+						type="text"
+						type="text"
+						onChange={this.handleChange}
+						defaultValue={this.state.name}
+					/>
 				</div>
 				<div>
-
-				<label htmlFor="">メールアドレス：</label>
-					<input id="email" type="text" type="mail" onChange={this.handleChange} defaultValue={this.state.email} />
+					<label htmlFor="">メールアドレス：</label>
+					<input
+						id="email"
+						type="text"
+						type="mail"
+						onChange={this.handleChange}
+						defaultValue={this.state.email}
+					/>
 				</div>
 				<div>
-					<button type="button" onClick={this.show} >
+					<button type="button" onClick={this.show}>
 						送信
 					</button>
 				</div>
